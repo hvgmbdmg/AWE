@@ -1,0 +1,10 @@
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\bin\Release\AlwaysAWE.exe.config
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\bin\Release\AlwaysAWE.exe
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\bin\Release\AlwaysAWE.pdb
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\showGraph.csprojAssemblyReference.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\AlwaysAWE.Properties.Resources.resources
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\showGraph.csproj.GenerateResource.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\showGraph.csproj.CoreCompileInputs.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\AlwaysAWE.exe
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\AlwaysAWE.pdb
+C:\Users\albert_shen\source\repos\AlwaysAWE\AlwaysAWE\obj\Release\AlwaysAWE.Form1.resources
