@@ -9,3 +9,14 @@ C:\Users\albert_shen\source\repos\AlwaysAWE\CleanData\obj\Release\netcoreapp2.0\
 C:\Users\albert_shen\source\repos\AlwaysAWE\CleanData\obj\Release\netcoreapp2.0\CleanData.AssemblyInfo.cs
 C:\Users\albert_shen\source\repos\AlwaysAWE\CleanData\obj\Release\netcoreapp2.0\CleanData.dll
 C:\Users\albert_shen\source\repos\AlwaysAWE\CleanData\obj\Release\netcoreapp2.0\CleanData.pdb
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\bin\Release\netcoreapp2.0\CleanData.deps.json
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\bin\Release\netcoreapp2.0\CleanData.runtimeconfig.json
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\bin\Release\netcoreapp2.0\CleanData.runtimeconfig.dev.json
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\bin\Release\netcoreapp2.0\CleanData.dll
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\bin\Release\netcoreapp2.0\CleanData.pdb
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.csprojAssemblyReference.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.csproj.CoreCompileInputs.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.AssemblyInfoInputs.cache
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.AssemblyInfo.cs
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.dll
+C:\Users\albert_shen\source\repos\AlwaysAWE\AWE\CleanData\obj\Release\netcoreapp2.0\CleanData.pdb
