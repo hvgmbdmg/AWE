@@ -3,6 +3,9 @@ from twstock import Stock
 from math import radians
 import numpy as np     # installed with matplotlib
 import matplotlib.pyplot as plt
+import time
+import csv
+
 
 
 stock = Stock('2371')                             # 擷取台積電股價
@@ -13,12 +16,22 @@ ma_br = stock.ma_bias_ratio(5, 10)                # 計算五日、十日乖離�
 
 print( stock.price )
 
-stock.fetch(2018, 1)
-print(stock.data)
+# stock.fetch(2018, 1)
+# print(stock.data)
+ 
+# load history data.
+for x in range(6):
+    stock.fetch(2018, x)
+    print(stock.data)
+    time.sleep(5)
 
-# Try to load history data.
-# Create Function
 
+f = open('2371.csv', 'w')
+w = csv.writer(f)
+w.writerows(stock.data)
+f.close()
+
+# save path: C:\Users\albert_shen\AppData\Local\Programs\Python\Python37
 
 """
 def main():
