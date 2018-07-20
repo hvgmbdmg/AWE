@@ -1,0 +1,11 @@
+C:\Users\user\Documents\GitHub\AWE\CleanData\bin\Debug\netcoreapp2.0\CleanData.deps.json
+C:\Users\user\Documents\GitHub\AWE\CleanData\bin\Debug\netcoreapp2.0\CleanData.runtimeconfig.json
+C:\Users\user\Documents\GitHub\AWE\CleanData\bin\Debug\netcoreapp2.0\CleanData.runtimeconfig.dev.json
+C:\Users\user\Documents\GitHub\AWE\CleanData\bin\Debug\netcoreapp2.0\CleanData.dll
+C:\Users\user\Documents\GitHub\AWE\CleanData\bin\Debug\netcoreapp2.0\CleanData.pdb
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.AssemblyInfoInputs.cache
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.AssemblyInfo.cs
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.dll
+C:\Users\user\Documents\GitHub\AWE\CleanData\obj\Debug\netcoreapp2.0\CleanData.pdb
