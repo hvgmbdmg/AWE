@@ -36,9 +36,19 @@ def findThereLevel(low, high):
     lowLevel    = high - (high-low)*parameter
     return hightLevel, mediumLevel, lowLevel
 
+'''
+def moving_average(self, data, days):
+        result = []
+        data = data[:]
+        for _ in range(len(data) - days + 1):
+            result.append(round(sum(data[-days:]) / days, 2))
+            data.pop()
+        return result[::-1]
+'''
 
 
-
+# datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+# '2011-11-03 18:21:26'
 
 StockNo = 2371;
 openFileTest( str(StockNo) + '.csv' )
