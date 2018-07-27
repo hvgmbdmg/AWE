@@ -44,6 +44,8 @@ def RSV( dataList, period ):
 
 '''
 dataList = (['date', 'capacity', 'turnover', 'open','high', 'low', 'close', 'change', 'transaction'])
+I think J is not always equal 3D - 2K
+Maybe we can use K-D or 3K-2D
 '''
 def KDJ( dataList, period ):
     K, D, J = [], [], []
@@ -67,7 +69,7 @@ def KDJ( dataList, period ):
         RSV = (close-low)/(high-low) * 100
         k = (2 / 3) * last_k + (1 / 3) * RSV
         d = (2 / 3) * last_d + (1 / 3) * k
-        j = 3 * k - 2 * d
+        j = 3 * d - 2 * k
 
         K.append(k)
         D.append(d)
@@ -76,6 +78,11 @@ def KDJ( dataList, period ):
         last_k, last_d = k, d
 
     return K,D,J
+
+'''
+Moving Average Convergence / Divergence, MACD
+'''
+def MACD():
 
 
 '''

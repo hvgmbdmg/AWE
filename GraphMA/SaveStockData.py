@@ -46,4 +46,3 @@ def openFileTest( fileName ):
         # 以迴圈輸出每一列
         for row in rows:
             print(row)
-
