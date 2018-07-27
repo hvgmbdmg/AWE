@@ -31,6 +31,52 @@ def findThereLevel(low, high):
     lowLevel    = high - (high-low)*parameter
     return hightLevel, mediumLevel, lowLevel
 
+'''
+def RSV( dataList, period ):
+    result = list()
+    dataLen = len(dataList)
+
+    if period > dataLen:
+        print ("data is not enough!")
+    # suppose period is 9
+    for i in range( period, dataLen ):
+'''
+
+'''
+dataList = (['date', 'capacity', 'turnover', 'open','high', 'low', 'close', 'change', 'transaction'])
+'''
+def KDJ( dataList, period ):
+    K, D, J = [], [], []
+    last_k, last_d = None, None
+    nowPeriod = list()
+    for item in dataList:
+        nowPeriod.append(item)
+        if len( nowPeriod ) < period:
+            continue
+        else :
+            del nowPeriod[0]
+
+        if last_k is None or last_d is None:
+            last_k = 50
+            last_d = 50
+
+        high  = max(l[4] for l in nowPeriod)
+        low   = min(l[5] for l in nowPeriod)
+        close = item[6]
+
+        RSV = (close-low)/(high-low) * 100
+        k = (2 / 3) * last_k + (1 / 3) * RSV
+        d = (2 / 3) * last_d + (1 / 3) * k
+        j = 3 * k - 2 * d
+
+        K.append(k)
+        D.append(d)
+        J.append(j)
+
+        last_k, last_d = k, d
+
+    return K,D,J
+
 
 '''
 def moving_average(self, data, days):
