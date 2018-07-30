@@ -31,16 +31,33 @@ def findThereLevel(low, high):
     lowLevel    = high - (high-low)*parameter
     return hightLevel, mediumLevel, lowLevel
 
-'''
-def RSV( dataList, period ):
-    result = list()
-    dataLen = len(dataList)
+def listMinusList( a, b ):
+    len = min( len(a), len(b) )
+    result = []
 
-    if period > dataLen:
-        print ("data is not enough!")
-    # suppose period is 9
-    for i in range( period, dataLen ):
-'''
+    for i in range(len):
+        result.append(a[i]-b[i])
+
+    return result;
+
+
+def MA( dataList, period ):
+    result = []
+    nowPeriod = list()
+
+    for item in dataList:
+        nowPeriod.append(item)
+        if len( nowPeriod ) < period:
+            continue
+        else :
+            del nowPeriod[0]
+
+        average = sum( l[4] for l in nowPeriod )/period
+        result.append(average)
+
+    return result
+
+
 
 '''
 dataList = (['date', 'capacity', 'turnover', 'open','high', 'low', 'close', 'change', 'transaction'])
@@ -80,9 +97,34 @@ def KDJ( dataList, period ):
     return K,D,J
 
 '''
-Moving Average Convergence / Divergence, MACD
+    exponential moving average
+    choose close price
+    n = 12/26 in macd
 '''
-def MACD():
+def EMA( dataList, n ):
+    EMA = []
+    lastEMA = dataList[0][6]
+
+    for item in dataList:
+        newEMA = (2*item[6] + lastEMA*(n-1))/(n+1)
+        lastEMA = newEMA
+        EMA.append( newEMA )
+
+    return EMA
+
+
+'''
+    Moving Average Convergence / Divergence, MACD
+    OSC is a bar.
+'''
+def MACD( dataList, quickN=12, slowN=26, demN=9 ):
+    quickEMA = EMA( dataList, quickN )
+    slowEMA  = EMA( dataList, slowN )
+    DIF = listMinusList( quickEMA, slowEMA )
+    DEM = EMA( dataList, demN )
+    OSC = listMinusList( DIF, DEM )
+
+    return DIF, DEM, OSC
 
 
 '''

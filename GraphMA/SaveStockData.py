@@ -26,7 +26,7 @@ f.close()
 def loadHistory( Code ):
     stock = Stock(str(Code))
     monthList = list()
-    for x in range(4,8): # 0~6
+    for x in range(4,9): # 0~6
         stock.fetch(2018, x)
         # print(stock.data)
         for y in range(len(stock.data)):
