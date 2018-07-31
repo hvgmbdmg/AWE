@@ -31,22 +31,22 @@ def loadHistory( Code, startYear, startMonth, FinalYear, FinalMonth ):
                 newDate = newItem.pop(0)
                 newItem.insert(0, newDate.strftime("%Y-%m-%d"))
                 monthList.append(newItem)
-            time.sleep(5)
+            time.sleep(3)
         print( "========================================================" )
-        print( "=                 Load   " , year , "   finish                 =" )
+        print( "=                 Load  " , year , "  finish                 =" )
         print( "========================================================" )
     
-
-    for month in range(1,FinalMonth+1):
+    i = 1 if FinalYear>startYear else startMonth
+    for month in range(i,FinalMonth+1):
         stock.fetch(FinalYear, month)
         for index in range(len(stock.data)):
             newItem = list(stock.data[index])
             newDate = newItem.pop(0)
             newItem.insert(0, newDate.strftime("%Y-%m-%d"))
             monthList.append(newItem)
-        time.sleep(5)
+        time.sleep(3)
     print( "========================================================" )
-    print( "=                 Load   " , str(Code) , "   finish                 =" )
+    print( "=                 Load  " , str(Code) , "  finish                 =" )
     print( "========================================================" )
 
     return monthList
