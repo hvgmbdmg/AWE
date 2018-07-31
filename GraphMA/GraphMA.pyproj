@@ -25,6 +25,9 @@
     <Compile Include="highChartsExample.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="personal.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SaveStockData.py">
       <SubType>Code</SubType>
     </Compile>
