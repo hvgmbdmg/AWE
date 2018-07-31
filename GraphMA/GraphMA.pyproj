@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>86fd1604-ebb0-43c8-823a-30ab1d81c6ce</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>GraphMA.py</StartupFile>
+    <StartupFile>highChartsExample.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GraphMA.py" />
+    <Compile Include="highChartsExample.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="personal.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SaveStockData.py">
       <SubType>Code</SubType>
     </Compile>
