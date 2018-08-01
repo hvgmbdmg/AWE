@@ -150,6 +150,7 @@ with open('2371.csv', newline='') as csvfile:
   # 以迴圈輸出每一列
   for row in rows:
     print(row)
-
+# Absolute path
+# with open(r'C:\...\...\...\2371.csv', newline='') as csvfile:
 
 # save path: C:\Users\albert_shen\AppData\Local\Programs\Python\Python37
