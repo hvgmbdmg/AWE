@@ -13,15 +13,15 @@ ma_p_cont = stock.continuous(ma_p)                # 計算五日均價持續天�
 ma_br = stock.ma_bias_ratio(5, 10)                # 計算五日、十日乖離值
 
 
-def openFileTest( fileName ):
-    with open('fileName', newline='') as csvfile:
-        # 讀取 CSV 檔案內容
+def readFile( code ):
+    fileName = str(code) + '.csv'
+    dataList = list()
+    with open(fileName, newline='') as csvfile:
         rows = csv.reader(csvfile)
-        # 以迴圈輸出每一列
         for row in rows:
-            print(row)
-
-# print(stock.data)
+            dataList.append(row)
+        del dataList[0]
+    return dataList
 
 # hightLevel, mediumLevel, lowLevel = findThereLevel(low, high)
 def findThereLevel(low, high):
@@ -31,13 +31,13 @@ def findThereLevel(low, high):
     lowLevel    = high - (high-low)*parameter
     return hightLevel, mediumLevel, lowLevel
 
+
 def listMinusList( a, b ):
     len = min( len(a), len(b) )
     result = []
 
     for i in range(len):
         result.append(a[i]-b[i])
-
     return result;
 
 
@@ -51,12 +51,10 @@ def MA( dataList, period ):
             continue
         else :
             del nowPeriod[0]
-
         average = sum( l[4] for l in nowPeriod )/period
         result.append(average)
 
     return result
-
 
 
 '''
@@ -95,6 +93,7 @@ def KDJ( dataList, period ):
         last_k, last_d = k, d
 
     return K,D,J
+
 
 '''
     exponential moving average
@@ -141,16 +140,5 @@ def moving_average(self, data, days):
 # datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 # '2011-11-03 18:21:26'
 
-StockNo = 2371;
-openFileTest( str(StockNo) + '.csv' )
-
-with open('2371.csv', newline='') as csvfile:
-  # 讀取 CSV 檔案內容
-  rows = csv.reader(csvfile)
-  # 以迴圈輸出每一列
-  for row in rows:
-    print(row)
 # Absolute path
 # with open(r'C:\...\...\...\2371.csv', newline='') as csvfile:
-
-# save path: C:\Users\albert_shen\AppData\Local\Programs\Python\Python37

@@ -1,3 +1,10 @@
 
 .vs/AlwaysAWE/v15/.suo
 *.cache
+.vs/AlwaysAWE/v15/.suo
+CleanData/obj/CleanData.csproj.nuget.cache
+CleanData/obj/CleanData.csproj.nuget.g.props
+CleanData/obj/project.assets.json
+*.cache
+*.cache
+*.cache

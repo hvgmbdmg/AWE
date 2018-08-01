@@ -19,7 +19,7 @@ data structure:
 
 
 '''
-attentionList = ["1000","1001"]
+attentionList = [2330,2371]
 
 waitList = []
 
