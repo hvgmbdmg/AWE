@@ -77,9 +77,9 @@ def KDJ( dataList, period ):
             last_k = 50
             last_d = 50
 
-        high  = max(l[4] for l in nowPeriod)
-        low   = min(l[5] for l in nowPeriod)
-        close = item[6]
+        high  = float(max(l[4] for l in nowPeriod))
+        low   = float(min(l[5] for l in nowPeriod))
+        close = float(item[6])
 
         RSV = (close-low)/(high-low) * 100
         k = (2 / 3) * last_k + (1 / 3) * RSV

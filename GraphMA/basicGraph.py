@@ -7,7 +7,11 @@ import plotly.graph_objs as go
 # import numpy as np
 
 
+
 dataList = priceIndicator.readFile(2330)
+
+
+K, D, J = priceIndicator.KDJ( dataList, 9 )
 
 Date  = list()
 Open  = list()
@@ -23,7 +27,53 @@ for data in dataList:
     Close.append(data[6])
 
 
+
+go_K = go.Scatter(
+                x = Date,
+                y = K,
+                name = str(2330) + " K",
+                line = dict(color = '#17BECF'),
+                opacity = 0.8)
+
+go_D= go.Scatter(
+                x=Date,
+                y=D,
+                name = str(2330) + " D",
+                line = dict(color = '#7F7F7F'),
+                opacity = 0.8)
+
+
+data = [go_K, go_D]
+
+layout = dict(
+    title='Time Series with Rangeslider',
+    xaxis=dict(
+        rangeselector=dict(
+            buttons=list([
+                dict(count=1,
+                     label='1m',
+                     step='month',
+                     stepmode='backward'),
+                dict(count=6,
+                     label='6m',
+                     step='month',
+                     stepmode='backward'),
+                dict(step='all')
+            ])
+        ),
+        rangeslider=dict(
+            visible = True
+        ),
+        type='date'
+    )
+)
+
 plotly.offline.plot({
-    "data": [go.Scatter(x=Date, y=Close)],
-    "layout": go.Layout(title="hello plotly")
-}, auto_open=True)
+    "data": data,
+    "layout": layout
+}, filename='2330 KD Graph.html'
+ , auto_open=False)
+
+
+#fig = dict(data=data, layout=layout)
+#py.iplot(fig, filename = "Time Series with Rangeslider")
