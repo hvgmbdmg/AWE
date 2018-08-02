@@ -5,18 +5,25 @@ Data crawler is twstock.
 """
 from twstock import Stock
 import time
+import csv
+import re
 
 
 '''
     This will create a new code file and load its data since 2005.
+    Test version from 2017 to 201806
 '''
-def AddNewfile():
-    '''
-        1. Create a empty file only have title.
-        2. call loadHistory function.
-        That is all.
-    '''
-    return 
+def createNewfile( code ):
+    title = ["Date", "Capacity", "Turnover", "Open", "High", "Low", "Close", "Change", "Transaction"]
+    fileName = str(code) + ".csv"
+    dataList = loadHistory( code, 2017, 1, 2018, 6 )
+    with open( fileName, 'w+', newline='') as csvfile:
+        w = csv.writer(csvfile)
+        w.writerow(title)
+        w.writerows(dataList)
+    print( "========================================================" )
+    print( "=                 Create " , str(code) , " finish                 =" )
+    print( "========================================================" )
 
 
 def loadHistory( Code, startYear, startMonth, FinalYear, FinalMonth ):
@@ -53,8 +60,8 @@ def loadHistory( Code, startYear, startMonth, FinalYear, FinalMonth ):
 
 
 def findLastDate( code ):
+    lastDate = ''
     fileName = str(code) + '.csv'
-    lastDate = ""
     with open( fileName, 'r', newline='') as csvfile:
         rows = csv.reader(csvfile)
         for row in rows:
@@ -63,21 +70,27 @@ def findLastDate( code ):
     print( "last date is: " + lastDate )
     return lastDate
 
-def updateFile( code, untilYear, untilMonth ):
-    '''
-        1. Call findLastDate ... ok
-        2. Call loadHistory ... ok
-        3. write csv in a mode
-    '''
-    lastDate = findLastDate( code )
-    lastDate = lastDate.split('-')
 
+def updateFile( code, untilYear, untilMonth ):
+    lastDateStr = findLastDate( code )
+    lastDate = re.split('-|/',lastDateStr)
     dataList = loadHistory( code, int(lastDate[0]), int(lastDate[1]), untilYear, untilMonth )
 
+    isFind = False
+    while ~isFind :
+        item = dataList[0]
+        if item[0]==lastDateStr :
+            isFind = True
+            del dataList[0]
+            break
+        del dataList[0]
 
-    with open('fileName', 'a+',newline='') as csvfile:
-        # 讀取 CSV 檔案內容
-        rows = csv.reader(csvfile)
-        # 以迴圈輸出每一列
-        for row in rows:
-            print(row)
+    fileName = str(code) + ".csv"
+    with open( fileName, 'a+', newline='') as csvfile:
+        w = csv.writer(csvfile)
+        w.writerows(dataList)
+
+
+# updateFile(2402, 2018, 8)
+# createNewfile(2371)
+# updateFile(2330, 2018, 8)

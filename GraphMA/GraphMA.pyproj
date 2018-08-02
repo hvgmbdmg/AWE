@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>86fd1604-ebb0-43c8-823a-30ab1d81c6ce</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>highChartsExample.py</StartupFile>
+    <StartupFile>basicGraph.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,14 +21,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="GraphMA.py" />
-    <Compile Include="highChartsExample.py">
+    <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="priceIndicator.py" />
+    <Compile Include="basicGraph.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="capacityIndicator.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="personal.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SaveStockData.py">
+    <Compile Include="aboutFile.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
