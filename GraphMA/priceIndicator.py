@@ -33,10 +33,10 @@ def findThereLevel(low, high):
 
 
 def listMinusList( a, b ):
-    len = min( len(a), len(b) )
+    listLength = min( len(a), len(b) )
     result = []
 
-    for i in range(len):
+    for i in range(listLength):
         result.append(a[i]-b[i])
     return result;
 
@@ -102,10 +102,22 @@ def KDJ( dataList, period ):
 '''
 def EMA( dataList, n ):
     EMA = []
-    lastEMA = dataList[0][6]
+    lastEMA = float(dataList[0][6])
 
     for item in dataList:
-        newEMA = (2*item[6] + lastEMA*(n-1))/(n+1)
+        newEMA = (2*float(item[6]) + lastEMA*(n-1))/(n+1)
+        lastEMA = newEMA
+        EMA.append( newEMA )
+
+    return EMA
+
+
+def EMA_DEM( dem, n ):
+    EMA = []
+    lastEMA = float(dem[0])
+
+    for item in dem:
+        newEMA = (2*float(item) + lastEMA*(n-1))/(n+1)
         lastEMA = newEMA
         EMA.append( newEMA )
 
@@ -114,13 +126,13 @@ def EMA( dataList, n ):
 
 '''
     Moving Average Convergence / Divergence, MACD
-    OSC is a bar.
+    DEM is a bar.
 '''
 def MACD( dataList, quickN=12, slowN=26, demN=9 ):
     quickEMA = EMA( dataList, quickN )
     slowEMA  = EMA( dataList, slowN )
     DIF = listMinusList( quickEMA, slowEMA )
-    DEM = EMA( dataList, demN )
+    DEM = EMA_DEM( DIF, demN )
     OSC = listMinusList( DIF, DEM )
 
     return DIF, DEM, OSC
