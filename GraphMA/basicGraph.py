@@ -45,6 +45,9 @@ go_D= go.Scatter(
 
 data = [go_K, go_D]
 
+
+# https://plot.ly/python/reference/#layout-xaxis-rangeslider
+# step ( enumerated : "month" | "year" | "day" | "hour" | "minute" | "second" | "all" )
 layout = dict(
     title='Time Series with Rangeslider',
     xaxis=dict(
@@ -58,7 +61,15 @@ layout = dict(
                      label='6m',
                      step='month',
                      stepmode='backward'),
-                dict(step='all')
+                dict(step='all'),
+                dict(count=15,
+                     label='15min',
+                     step='minute',
+                     stepmode='backward'),
+                dict(count=1,
+                     label='Y',
+                     step='year',
+                     stepmode='backward')
             ])
         ),
         rangeslider=dict(
