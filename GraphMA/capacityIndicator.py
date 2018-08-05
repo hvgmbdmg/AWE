@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
-"""
+'''
 This script is about capacity indicator.
 For Eexample one daily capacity lower or higher some number, I want to remind user.
-"""
+'''
 
 '''
 
@@ -22,3 +22,7 @@ def CMA( dataList, period ):
         result.append(average)
 
     return result
+
+def capacityRemind( dataList, period ):
+    
+    return 

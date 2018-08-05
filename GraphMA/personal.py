@@ -19,7 +19,8 @@ data structure:
 
 
 '''
-attentionList = [2330,2371]
+# attentionList = [1808,2332,2330,2371,3029,6283]
+attentionList = [2332,2330,2371,3029,6283]
 
 waitList = []
 

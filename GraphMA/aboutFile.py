@@ -11,12 +11,12 @@ import re
 
 '''
     This will create a new code file and load its data since 2005.
-    Test version from 2017 to 201806
+    Test version from 2016 to 201806
 '''
 def createNewfile( code ):
     title = ["Date", "Capacity", "Turnover", "Open", "High", "Low", "Close", "Change", "Transaction"]
     fileName = str(code) + ".csv"
-    dataList = loadHistory( code, 2017, 1, 2018, 6 )
+    dataList = loadHistory( code, 2016, 1, 2018, 6 )
     with open( fileName, 'w+', newline='') as csvfile:
         w = csv.writer(csvfile)
         w.writerow(title)
@@ -92,5 +92,13 @@ def updateFile( code, untilYear, untilMonth ):
 
 
 # updateFile(2402, 2018, 8)
-# createNewfile(2371)
-# updateFile(2330, 2018, 8)
+import personal
+
+for i in range(len(personal.attentionList)):
+    code = personal.attentionList[i]
+    createNewfile(code )
+    updateFile(code , 2018, 8)
+    time.sleep(4)
+
+#createNewfile(2371 )
+#updateFile(2371 , 2018, 8)

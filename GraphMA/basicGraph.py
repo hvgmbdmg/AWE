@@ -2,6 +2,7 @@
 import priceIndicator
 import plotly
 import plotly.graph_objs as go
+import time
 # import plotly.plotly as py
 # import datetime
 # import numpy as np
@@ -9,7 +10,6 @@ import plotly.graph_objs as go
 
 
 dataList = priceIndicator.readFile(2330)
-
 
 K, D, J = priceIndicator.KDJ( dataList, 9 )
 
