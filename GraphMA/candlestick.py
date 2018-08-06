@@ -6,12 +6,10 @@ import plotly.graph_objs as go
 
 from datetime import datetime
 
-
-dataList = priceIndicator.readFile( 2330 )
-
+dataList = priceIndicator.readFile( 3035 )
+print( "load 3035 finish" )
 #K, D, J = priceIndicator.KDJ( dataList, 9 )
 #DIF, DEM, OSC = priceIndicator.MACD( dataList )#, quickN=12, slowN=26, demN=9 )
-
 
 Date  = list()
 Open  = list()
@@ -26,7 +24,8 @@ for data in dataList:
     Low.append(data[5])
     Close.append(data[6])
 
-
+# trace should havd one candlestick, one bar (volumn), 
+# four(temp) scatter(MA,KD MACD, three level), 
 
 trace = go.Candlestick(x=Date,
                        open=Open,
@@ -34,7 +33,7 @@ trace = go.Candlestick(x=Date,
                        low=Low,
                        close=Close)
 
-
+print("trace finish")
 '''
 trace_high = go.Scatter(x=list(Date),
                         y=list(df.High),
@@ -92,7 +91,8 @@ xaxis=dict(
     )
 
 yaxis=dict(
-    autorange=True
+    #autotick=False
+     autorange=True
     )
 
 
@@ -150,12 +150,14 @@ updatemenus = list([
 
 # if we need to look multi chart at same window, we should give our only width and height.
 # Ex. dict(title='2330', width=1500, height=2000, showlegend=False, xaxis=xaxis , updatemenus=updatemenus)
-layout = dict(title='2330',showlegend=False,
+layout = dict(title='3035',showlegend=False,
               xaxis=xaxis,yaxis=yaxis)# , updatemenus=updatemenus)
+
+print("layout finish")
 
 plotly.offline.plot({
     "data": data,
     "layout": layout
-}, filename='2330.html'
+}, filename='3035.html'
  , auto_open=True)
 

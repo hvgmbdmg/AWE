@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 import time
 import csv
 
-stock = Stock('2371')                             # 擷取股價
-ma_p = stock.moving_average(stock.price, 5)       # 計算五日均價
-ma_c = stock.moving_average(stock.capacity, 5)    # 計算五日均量
-ma_p_cont = stock.continuous(ma_p)                # 計算五日均價持續天數
-ma_br = stock.ma_bias_ratio(5, 10)                # 計算五日、十日乖離值
-
+'''
+    stock = Stock('2371')                             # 擷取股價
+    ma_p = stock.moving_average(stock.price, 5)       # 計算五日均價
+    ma_c = stock.moving_average(stock.capacity, 5)    # 計算五日均量
+    ma_p_cont = stock.continuous(ma_p)                # 計算五日均價持續天數
+    ma_br = stock.ma_bias_ratio(5, 10)                # 計算五日、十日乖離值
+'''
 
 def readFile( code ):
     fileName = str(code) + '.csv'
@@ -51,7 +52,7 @@ def MA( dataList, period ):
             continue
         else :
             del nowPeriod[0]
-        average = sum( l[4] for l in nowPeriod )/period
+        average = sum( float(l[4]) for l in nowPeriod )/period
         result.append(average)
 
     return result
@@ -85,6 +86,20 @@ def KDJ( dataList, period ):
         k = (2 / 3) * last_k + (1 / 3) * RSV
         d = (2 / 3) * last_d + (1 / 3) * k
         j = 3 * d - 2 * k
+
+        '''
+        if k>=100 or k<=0 or d>=100 or d<=0:
+            print("I think KD is error")
+            print("high: " + str(high))
+            print("low: " + str(low))
+            print("close: " + str(close))
+            print("RSV: " + str(RSV))
+            print("k: " + str(k))
+            print("d: " + str(d))
+            print("j: " + str(j))
+            print("last_k: " + str(last_k))
+            print("last_d: " + str(last_d))
+        '''
 
         K.append(k)
         D.append(d)
